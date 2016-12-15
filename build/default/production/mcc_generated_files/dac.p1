@@ -4983,12 +4983,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;dac.c: 58: {
 [e :U _DAC_Initialize ]
 [f ]
-[; ;dac.c: 60: DAC1CON0 = 0x90;
+[; ;dac.c: 60: DAC1CON0 = 0x98;
 "60
-[e = _DAC1CON0 -> -> 144 `i `uc ]
-[; ;dac.c: 62: DAC1CON1 = 0x05;
+[e = _DAC1CON0 -> -> 152 `i `uc ]
+[; ;dac.c: 62: DAC1CON1 = 0x19;
 "62
-[e = _DAC1CON1 -> -> 5 `i `uc ]
+[e = _DAC1CON1 -> -> 25 `i `uc ]
 [; ;dac.c: 63: }
 "63
 [e :UE 621 ]

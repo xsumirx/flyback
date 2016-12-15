@@ -51,14 +51,15 @@
 #include <stdbool.h>
 #include "interrupt_manager.h"
 #include "adc.h"
+#include "fvr.h"
 #include "dac.h"
 #include "pwm3.h"
 #include "cog1.h"
 #include "eusart.h"
 #include "cmp1.h"
 #include "pwm2.h"
-#include "pwm1.h"
 #include "tmr2.h"
+#include "pwm1.h"
 #include "tmr1.h"
 
 #define _XTAL_FREQ  32000000

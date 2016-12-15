@@ -6727,6 +6727,12 @@ adc_result_t ADC_GetConversionResult(void);
 # 260
 adc_result_t ADC_GetConversion(adc_channel_t channel);
 
+# 92 "mcc_generated_files/fvr.h"
+void FVR_Initialize(void);
+
+# 126
+bool FVR_IsOutputReady(void);
+
 # 92 "mcc_generated_files/dac.h"
 void DAC_Initialize(void);
 
@@ -6769,12 +6775,6 @@ void PWM2_Initialize(void);
 # 123
 void PWM2_LoadDutyValue(uint16_t dutyValue);
 
-# 96 "mcc_generated_files/pwm1.h"
-void PWM1_Initialize(void);
-
-# 123
-void PWM1_LoadDutyValue(uint16_t dutyValue);
-
 # 102 "mcc_generated_files/tmr2.h"
 void TMR2_Initialize(void);
 
@@ -6795,6 +6795,12 @@ void TMR2_LoadPeriodRegister(uint8_t periodVal);
 
 # 324
 bool TMR2_HasOverflowOccured(void);
+
+# 96 "mcc_generated_files/pwm1.h"
+void PWM1_Initialize(void);
+
+# 123
+void PWM1_LoadDutyValue(uint16_t dutyValue);
 
 # 100 "mcc_generated_files/tmr1.h"
 void TMR1_Initialize(void);
@@ -6835,9 +6841,9 @@ void (*TMR1_InterruptHandler)(void);
 # 439
 void TMR1_DefaultInterruptHandler(void);
 
-# 77 "mcc_generated_files/mcc.h"
+# 78 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
 
-# 90
+# 91
 void OSCILLATOR_Initialize(void);
 

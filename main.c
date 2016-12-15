@@ -196,9 +196,9 @@ void main(void) {
     b1 = 0.77; b2 = 0.22;
     
     M1 = 0; M2 = 0; rk = 0; rk_1 = 0; rk_2 = 0;
-    Vref = 2.5;
+    Vref = 2500;
     
-    DA_LSB = 5000.0/256.0;
+    DA_LSB = 256.0/1024.0;
     ADC_SCALE = 9.23;
     
 //    float Vdesired = 25;       //Volts
@@ -252,6 +252,7 @@ void main(void) {
     TMR2_Initialize();
     COG1_Initialize();
     
+    FVR_Initialize();
     DAC_Initialize();
     CMP1_Initialize();
     
@@ -280,7 +281,7 @@ void main(void) {
         
         adcVal = ADC_GetConversion(channel_AN4) + ADC_GetConversion(channel_AN4) + ADC_GetConversion(channel_AN4) + ADC_GetConversion(channel_AN4);
 
-        Vout = ((float)adcVal * 4.88)/4000; 
+        Vout = ((float)adcVal * 4.88)/4; 
         
         Ver = Vref - Vout; /* Calculate error term */
         
@@ -290,27 +291,32 @@ void main(void) {
         rk = Ver + (b1 * rk_1) + (b2 * rk_2);
         Vc = (a0*rk) + (rk_1 * a1) + (rk_2 * a2); /* Calculate output */
         
-        DAC_DISCRETE = Vc*DA_LSB;
- 
-        //if(DAC_DISCRETE < 0)
-            //DAC_DISCRETE = 0;
+        if(Vc < 0) Vc = 0;
         
-        DAC_SetOutput((unsigned int)fabs(DAC_DISCRETE));
+        DAC_DISCRETE = Vc*DA_LSB;
+        
+        unsigned int DAC_ABS = (unsigned int)fabs(DAC_DISCRETE);
+        if(DAC_ABS < 0)
+            DAC_ABS = 0;
+        else if(DAC_ABS > 255)
+            DAC_ABS = 255;
+        
+        DAC_SetOutput(DAC_ABS);
 
         rk_2 = rk_1; /* Update variables */
         rk_1 = rk;
 
-        USART_WriteString("Ver : ");
-        USART_WriteValue(Ver);
+//        USART_WriteString("Ver : ");
+//        USART_WriteValue(Ver);
+//        
+//        USART_WriteString("      ");
+//                
+//        USART_WriteString("Vc : ");
+        //USART_WriteValue(Vc);
         
-        USART_WriteString("      ");
-                
-        USART_WriteString("Vc : ");
-        USART_WriteValue(Vc);
+        //USART_Write('\n');
         
-        USART_Write('\n');
-        
-        __delay_ms(10);
+        //__delay_ms(10);
         
     }
     return;
@@ -328,6 +334,5 @@ void interrupt isr()
     }
    
 }
-
 
 

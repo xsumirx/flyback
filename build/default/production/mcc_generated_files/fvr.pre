@@ -1,5 +1,5 @@
 
-# 1 "mcc_generated_files/cog1.c"
+# 1 "mcc_generated_files/fvr.c"
 
 # 26 "C:\Program Files\Microchip\xc8\v1.38\include\htc.h"
 extern const char __xc8_OPTIM_SPEED;
@@ -6686,79 +6686,21 @@ typedef int16_t intptr_t;
 
 typedef uint16_t uintptr_t;
 
-# 90 "mcc_generated_files/cog1.h"
-void COG1_Initialize(void);
+# 92 "mcc_generated_files/fvr.h"
+void FVR_Initialize(void);
 
-# 117
-void COG1_AutoShutdownEventSet();
+# 126
+bool FVR_IsOutputReady(void);
 
-# 154
-void COG1_AutoShutdownEventClear();
-
-# 57 "mcc_generated_files/cog1.c"
-void COG1_Initialize(void)
+# 57 "mcc_generated_files/fvr.c"
+void FVR_Initialize(void)
 {
 
-COG1CON0 = 0x00;
-
-
-
-
-COG1CON1 = 0x00;
-
-
-COG1RIS = 0x10;
-
-
-COG1RSIM = 0x00;
-
-
-COG1FIS = 0x22;
-
-
-COG1FSIM = 0x22;
-
-
-COG1ASD0 = 0x00;
-
-
-COG1ASD1 = 0x00;
-
-
-COG1STR = 0x01;
-
-
-COG1DBR = 0x00;
-
-
-COG1DBF = 0x00;
-
-
-COG1BLKR = 0x0A;
-
-
-COG1BLKF = 0x00;
-
-
-COG1PHR = 0x00;
-
-
-COG1PHF = 0x00;
-
-
-COG1CON0 = 0x80;
-
+FVRCON = 0x84;
 }
 
-void COG1_AutoShutdownEventSet()
+bool FVR_IsOutputReady(void)
 {
-
-COG1ASD0bits.G1ASE = 1;
-}
-
-void COG1_AutoShutdownEventClear()
-{
-
-COG1ASD0bits.G1ASE = 0;
+return (FVRCONbits.FVRRDY);
 }
 

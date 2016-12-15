@@ -5054,9 +5054,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;cog1.c: 92: COG1DBF = 0x00;
 "92
 [e = _COG1DBF -> -> 0 `i `uc ]
-[; ;cog1.c: 95: COG1BLKR = 0x00;
+[; ;cog1.c: 95: COG1BLKR = 0x0A;
 "95
-[e = _COG1BLKR -> -> 0 `i `uc ]
+[e = _COG1BLKR -> -> 10 `i `uc ]
 [; ;cog1.c: 98: COG1BLKF = 0x00;
 "98
 [e = _COG1BLKF -> -> 0 `i `uc ]

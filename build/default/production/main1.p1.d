@@ -1,6 +1,6 @@
- build/default/production/main.d  \
- build/default/production/main.p1:  \
- main.c  \
+ build/default/production/main1.d  \
+ build/default/production/main1.p1:  \
+ main1.c  \
 mcc_generated_files/fvr.h  \
 mcc_generated_files/cog1.h  \
 mcc_generated_files/cmp1.h  \

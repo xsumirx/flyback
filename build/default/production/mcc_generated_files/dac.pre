@@ -6696,9 +6696,9 @@ void DAC_SetOutput(uint8_t inputData);
 void DAC_Initialize(void)
 {
 
-DAC1CON0 = 0x90;
+DAC1CON0 = 0x98;
 
-DAC1CON1 = 0x05;
+DAC1CON1 = 0x19;
 }
 
 void DAC_SetOutput(uint8_t inputData)

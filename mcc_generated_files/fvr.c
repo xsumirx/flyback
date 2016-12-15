@@ -1,21 +1,21 @@
 /**
-  @Generated MPLAB(c) Code Configurator Source File
+  FVR Generated Driver File
 
-  @Company:
+  @Company
     Microchip Technology Inc.
 
-  @File Name:
-    mcc.c
+  @File Name
+    fvr.c
 
-  @Summary:
-    This is the mcc.c file generated using MPLAB(c) Code Configurator
+  @Summary
+    This is the generated driver implementation file for the FVR driver using MPLAB(c) Code Configurator
 
-  @Description:
-    This header file provides implementations for driver APIs for all modules selected in the GUI.
+  @Description
+    This source file provides APIs for FVR.
     Generation Information :
         Product Revision  :  MPLAB(c) Code Configurator - 3.16
         Device            :  PIC16F1709
-        Driver Version    :  1.02
+        Driver Version    :  2.00
     The generated drivers are tested against the following:
         Compiler          :  XC8 1.35
         MPLAB             :  MPLAB X 3.20
@@ -43,44 +43,28 @@
     TERMS.
 */
 
-// Configuration bits: selected in the GUI
+/**
+  Section: Included Files
+*/
 
-#include "mcc.h"
+#include <xc.h>
+#include "fvr.h"
 
-void SYSTEM_Initialize(void)
+/**
+  Section: FVR APIs
+*/
+
+void FVR_Initialize(void)
 {
-    
-    PIN_MANAGER_Initialize();
-    OSCILLATOR_Initialize();
-    FVR_Initialize();
-    DAC_Initialize();
-    PWM2_Initialize();
-    COG1_Initialize();
-    TMR2_Initialize();
-    PWM1_Initialize();
-    CMP1_Initialize();
-    ADC_Initialize();
-    PWM3_Initialize();
-    TMR1_Initialize();
-    EUSART_Initialize();
+    // CDAFVR 1x; FVREN enabled; TSRNG Lo_range; ADFVR off; TSEN disabled; 
+    FVRCON = 0x84;
 }
 
-void OSCILLATOR_Initialize(void)
+bool FVR_IsOutputReady(void)
 {
-    // SCS FOSC; SPLLEN disabled; IRCF 8MHz_HF; 
-    OSCCON = 0x70;
-    // SOSCR disabled; 
-    OSCSTAT = 0x00;
-    // TUN 0; 
-    OSCTUNE = 0x00;
-    // Set the secondary oscillator
-    
-    // Wait for PLL to stabilize
-    while(PLLR == 0)
-    {
-    }
+    return (FVRCONbits.FVRRDY);
 }
-
 /**
  End of File
 */
+

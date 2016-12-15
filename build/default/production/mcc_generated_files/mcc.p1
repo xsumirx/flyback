@@ -1,25 +1,27 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[v F5210 `(v ~T0 @X0 0 tf ]
+[v F5214 `(v ~T0 @X0 0 tf ]
 "73 mcc_generated_files/pin_manager.h
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
-"90 mcc_generated_files/mcc.h
+"91 mcc_generated_files/mcc.h
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
+"92 mcc_generated_files/fvr.h
+[v _FVR_Initialize `(v ~T0 @X0 0 ef ]
 "92 mcc_generated_files/dac.h
 [v _DAC_Initialize `(v ~T0 @X0 0 ef ]
-"96 mcc_generated_files/pwm1.h
-[v _PWM1_Initialize `(v ~T0 @X0 0 ef ]
 "96 mcc_generated_files/pwm2.h
 [v _PWM2_Initialize `(v ~T0 @X0 0 ef ]
+"90 mcc_generated_files/cog1.h
+[v _COG1_Initialize `(v ~T0 @X0 0 ef ]
+"102 mcc_generated_files/tmr2.h
+[v _TMR2_Initialize `(v ~T0 @X0 0 ef ]
+"96 mcc_generated_files/pwm1.h
+[v _PWM1_Initialize `(v ~T0 @X0 0 ef ]
 "92 mcc_generated_files/cmp1.h
 [v _CMP1_Initialize `(v ~T0 @X0 0 ef ]
 "136 mcc_generated_files/adc.h
 [v _ADC_Initialize `(v ~T0 @X0 0 ef ]
-"90 mcc_generated_files/cog1.h
-[v _COG1_Initialize `(v ~T0 @X0 0 ef ]
 "101 mcc_generated_files/pwm3.h
 [v _PWM3_Initialize `(v ~T0 @X0 0 ef ]
-"102 mcc_generated_files/tmr2.h
-[v _TMR2_Initialize `(v ~T0 @X0 0 ef ]
 "100 mcc_generated_files/tmr1.h
 [v _TMR1_Initialize `(v ~T0 @X0 0 ef ]
 "94 mcc_generated_files/eusart.h
@@ -5023,6 +5025,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;adc.h: 197: bool ADC_IsConversionDone();
 [; ;adc.h: 230: adc_result_t ADC_GetConversionResult(void);
 [; ;adc.h: 260: adc_result_t ADC_GetConversion(adc_channel_t channel);
+[; ;fvr.h: 92: void FVR_Initialize(void);
+[; ;fvr.h: 126: bool FVR_IsOutputReady(void);
 [; ;dac.h: 92: void DAC_Initialize(void);
 [; ;dac.h: 128: void DAC_SetOutput(uint8_t inputData);
 [; ;pwm3.h: 101: void PWM3_Initialize(void);
@@ -5037,8 +5041,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;cmp1.h: 132: bool CMP1_GetOutputStatus(void);
 [; ;pwm2.h: 96: void PWM2_Initialize(void);
 [; ;pwm2.h: 123: void PWM2_LoadDutyValue(uint16_t dutyValue);
-[; ;pwm1.h: 96: void PWM1_Initialize(void);
-[; ;pwm1.h: 123: void PWM1_LoadDutyValue(uint16_t dutyValue);
 [; ;tmr2.h: 102: void TMR2_Initialize(void);
 [; ;tmr2.h: 131: void TMR2_StartTimer(void);
 [; ;tmr2.h: 163: void TMR2_StopTimer(void);
@@ -5046,6 +5048,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tmr2.h: 237: void TMR2_WriteTimer(uint8_t timerVal);
 [; ;tmr2.h: 289: void TMR2_LoadPeriodRegister(uint8_t periodVal);
 [; ;tmr2.h: 324: bool TMR2_HasOverflowOccured(void);
+[; ;pwm1.h: 96: void PWM1_Initialize(void);
+[; ;pwm1.h: 123: void PWM1_LoadDutyValue(uint16_t dutyValue);
 [; ;tmr1.h: 100: void TMR1_Initialize(void);
 [; ;tmr1.h: 129: void TMR1_StartTimer(void);
 [; ;tmr1.h: 161: void TMR1_StopTimer(void);
@@ -5058,11 +5062,11 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tmr1.h: 385: void TMR1_CallBack(void);
 [; ;tmr1.h: 403: void TMR1_SetInterruptHandler(void *InterruptHandler);
 "421 mcc_generated_files/tmr1.h
-[v _TMR1_InterruptHandler `*F5210 ~T0 @X0 1 e ]
+[v _TMR1_InterruptHandler `*F5214 ~T0 @X0 1 e ]
 [; ;tmr1.h: 421: void (*TMR1_InterruptHandler)(void);
 [; ;tmr1.h: 439: void TMR1_DefaultInterruptHandler(void);
-[; ;mcc.h: 77: void SYSTEM_Initialize(void);
-[; ;mcc.h: 90: void OSCILLATOR_Initialize(void);
+[; ;mcc.h: 78: void SYSTEM_Initialize(void);
+[; ;mcc.h: 91: void OSCILLATOR_Initialize(void);
 "50 mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize `(v ~T0 @X0 1 ef ]
 "51
@@ -5077,72 +5081,75 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;mcc.c: 54: OSCILLATOR_Initialize();
 "54
 [e ( _OSCILLATOR_Initialize ..  ]
-[; ;mcc.c: 55: DAC_Initialize();
+[; ;mcc.c: 55: FVR_Initialize();
 "55
-[e ( _DAC_Initialize ..  ]
-[; ;mcc.c: 56: PWM1_Initialize();
+[e ( _FVR_Initialize ..  ]
+[; ;mcc.c: 56: DAC_Initialize();
 "56
-[e ( _PWM1_Initialize ..  ]
+[e ( _DAC_Initialize ..  ]
 [; ;mcc.c: 57: PWM2_Initialize();
 "57
 [e ( _PWM2_Initialize ..  ]
-[; ;mcc.c: 58: CMP1_Initialize();
+[; ;mcc.c: 58: COG1_Initialize();
 "58
-[e ( _CMP1_Initialize ..  ]
-[; ;mcc.c: 59: ADC_Initialize();
-"59
-[e ( _ADC_Initialize ..  ]
-[; ;mcc.c: 60: COG1_Initialize();
-"60
 [e ( _COG1_Initialize ..  ]
-[; ;mcc.c: 61: PWM3_Initialize();
-"61
-[e ( _PWM3_Initialize ..  ]
-[; ;mcc.c: 62: TMR2_Initialize();
-"62
+[; ;mcc.c: 59: TMR2_Initialize();
+"59
 [e ( _TMR2_Initialize ..  ]
-[; ;mcc.c: 63: TMR1_Initialize();
+[; ;mcc.c: 60: PWM1_Initialize();
+"60
+[e ( _PWM1_Initialize ..  ]
+[; ;mcc.c: 61: CMP1_Initialize();
+"61
+[e ( _CMP1_Initialize ..  ]
+[; ;mcc.c: 62: ADC_Initialize();
+"62
+[e ( _ADC_Initialize ..  ]
+[; ;mcc.c: 63: PWM3_Initialize();
 "63
-[e ( _TMR1_Initialize ..  ]
-[; ;mcc.c: 64: EUSART_Initialize();
+[e ( _PWM3_Initialize ..  ]
+[; ;mcc.c: 64: TMR1_Initialize();
 "64
-[e ( _EUSART_Initialize ..  ]
-[; ;mcc.c: 65: }
+[e ( _TMR1_Initialize ..  ]
+[; ;mcc.c: 65: EUSART_Initialize();
 "65
+[e ( _EUSART_Initialize ..  ]
+[; ;mcc.c: 66: }
+"66
 [e :UE 622 ]
 }
-"67
-[v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
 "68
+[v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
+"69
 {
-[; ;mcc.c: 67: void OSCILLATOR_Initialize(void)
-[; ;mcc.c: 68: {
+[; ;mcc.c: 68: void OSCILLATOR_Initialize(void)
+[; ;mcc.c: 69: {
 [e :U _OSCILLATOR_Initialize ]
 [f ]
-[; ;mcc.c: 70: OSCCON = 0x70;
-"70
+[; ;mcc.c: 71: OSCCON = 0x70;
+"71
 [e = _OSCCON -> -> 112 `i `uc ]
-[; ;mcc.c: 72: OSCSTAT = 0x00;
-"72
+[; ;mcc.c: 73: OSCSTAT = 0x00;
+"73
 [e = _OSCSTAT -> -> 0 `i `uc ]
-[; ;mcc.c: 74: OSCTUNE = 0x00;
-"74
+[; ;mcc.c: 75: OSCTUNE = 0x00;
+"75
 [e = _OSCTUNE -> -> 0 `i `uc ]
-[; ;mcc.c: 78: while(PLLR == 0)
-"78
+[; ;mcc.c: 79: while(PLLR == 0)
+"79
 [e $U 624  ]
 [e :U 625 ]
-[; ;mcc.c: 79: {
-"79
-{
+[; ;mcc.c: 80: {
 "80
+{
+"81
 }
 [e :U 624 ]
-"78
+"79
 [e $ == -> _PLLR `i -> 0 `i 625  ]
 [e :U 626 ]
-[; ;mcc.c: 80: }
 [; ;mcc.c: 81: }
-"81
+[; ;mcc.c: 82: }
+"82
 [e :UE 623 ]
 }

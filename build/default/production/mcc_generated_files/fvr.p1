@@ -1,36 +1,17 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[v F5214 `(v ~T0 @X0 0 tf ]
-"1785 C:\Program Files\Microchip\xc8\v1.38\include\pic16f1709.h
-[v _ADCON0 `Vuc ~T0 @X0 0 e@157 ]
-"1864
-[v _ADCON1 `Vuc ~T0 @X0 0 e@158 ]
-"1916
-[v _ADCON2 `Vuc ~T0 @X0 0 e@159 ]
-"1747
-[v _ADRESL `Vuc ~T0 @X0 0 e@155 ]
-"1766
-[v _ADRESH `Vuc ~T0 @X0 0 e@156 ]
-"86 mcc_generated_files/adc.c
-[c E5122 4 28 29 30 31 .. ]
-[n E5122 . channel_AN4 channel_FVRBuffer2 channel_Temp channel_DAC channel_FVRBuffer1  ]
-"1791 C:\Program Files\Microchip\xc8\v1.38\include\pic16f1709.h
-[s S95 :1 `uc 1 :1 `uc 1 :5 `uc 1 ]
-[n S95 . ADON GO_nDONE CHS ]
-"1796
-[s S96 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S96 . . ADGO CHS0 CHS1 CHS2 CHS3 CHS4 ]
-"1805
-[s S97 :1 `uc 1 :1 `uc 1 ]
-[n S97 . . GO ]
-"1790
-[u S94 `S95 1 `S96 1 `S97 1 ]
-[n S94 . . . . ]
-"1810
-[v _ADCON0bits `VS94 ~T0 @X0 0 e@157 ]
-[v F5084 `(v ~T0 @X0 1 tf1`ul ]
-"152 C:\Program Files\Microchip\xc8\v1.38\include\pic.h
-[v __delay `JF5084 ~T0 @X0 0 e ]
-[p i __delay ]
+"2425 C:\Program Files\Microchip\xc8\v1.38\include\pic16f1709.h
+[v _FVRCON `Vuc ~T0 @X0 0 e@279 ]
+"2431
+[s S125 :2 `uc 1 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S125 . ADFVR CDAFVR TSRNG TSEN FVRRDY FVREN ]
+"2439
+[s S126 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S126 . ADFVR0 ADFVR1 CDAFVR0 CDAFVR1 ]
+"2430
+[u S124 `S125 1 `S126 1 ]
+[n S124 . . . ]
+"2446
+[v _FVRCONbits `VS124 ~T0 @X0 0 e@279 ]
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
 [; ;xc8debug.h: 14: extern void __builtin_software_breakpoint(void);
@@ -4972,6 +4953,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pic.h: 186: extern unsigned char __resetbits;
 [; ;pic.h: 187: extern __bit __powerdown;
 [; ;pic.h: 188: extern __bit __timeout;
+[; ;stdbool.h: 12: typedef unsigned char bool;
 [; ;stdint.h: 13: typedef signed char int8_t;
 [; ;stdint.h: 20: typedef signed int int16_t;
 [; ;stdint.h: 28: typedef signed short long int int24_t;
@@ -5000,198 +4982,36 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;stdint.h: 205: typedef uint32_t uintmax_t;
 [; ;stdint.h: 210: typedef int16_t intptr_t;
 [; ;stdint.h: 215: typedef uint16_t uintptr_t;
-[; ;stdbool.h: 12: typedef unsigned char bool;
-[; ;adc.h: 71: typedef uint16_t adc_result_t;
-[; ;adc.h: 76: typedef struct
-[; ;adc.h: 77: {
-[; ;adc.h: 78: adc_result_t adcResult1;
-[; ;adc.h: 79: adc_result_t adcResult2;
-[; ;adc.h: 80: } adc_sync_double_result_t;
-[; ;adc.h: 94: typedef enum
-[; ;adc.h: 95: {
-[; ;adc.h: 96: channel_AN4 = 0x4,
-[; ;adc.h: 97: channel_FVRBuffer2 = 0x1C,
-[; ;adc.h: 98: channel_Temp = 0x1D,
-[; ;adc.h: 99: channel_DAC = 0x1E,
-[; ;adc.h: 100: channel_FVRBuffer1 = 0x1F
-[; ;adc.h: 101: } adc_channel_t;
-[; ;adc.h: 136: void ADC_Initialize(void);
-[; ;adc.h: 165: void ADC_StartConversion(adc_channel_t channel);
-[; ;adc.h: 197: bool ADC_IsConversionDone();
-[; ;adc.h: 230: adc_result_t ADC_GetConversionResult(void);
-[; ;adc.h: 260: adc_result_t ADC_GetConversion(adc_channel_t channel);
-[; ;pin_manager.h: 73: void PIN_MANAGER_Initialize (void);
-[; ;interrupt_manager.h: 110: void interrupt INTERRUPT_InterruptManager(void);
 [; ;fvr.h: 92: void FVR_Initialize(void);
 [; ;fvr.h: 126: bool FVR_IsOutputReady(void);
-[; ;dac.h: 92: void DAC_Initialize(void);
-[; ;dac.h: 128: void DAC_SetOutput(uint8_t inputData);
-[; ;pwm3.h: 101: void PWM3_Initialize(void);
-[; ;pwm3.h: 128: void PWM3_LoadDutyValue(uint16_t dutyValue);
-[; ;cog1.h: 90: void COG1_Initialize(void);
-[; ;cog1.h: 117: void COG1_AutoShutdownEventSet();
-[; ;cog1.h: 154: void COG1_AutoShutdownEventClear();
-[; ;eusart.h: 94: void EUSART_Initialize(void);
-[; ;eusart.h: 114: uint8_t EUSART_Read(void);
-[; ;eusart.h: 134: void EUSART_Write(uint8_t txData);
-[; ;cmp1.h: 92: void CMP1_Initialize(void);
-[; ;cmp1.h: 132: bool CMP1_GetOutputStatus(void);
-[; ;pwm2.h: 96: void PWM2_Initialize(void);
-[; ;pwm2.h: 123: void PWM2_LoadDutyValue(uint16_t dutyValue);
-[; ;tmr2.h: 102: void TMR2_Initialize(void);
-[; ;tmr2.h: 131: void TMR2_StartTimer(void);
-[; ;tmr2.h: 163: void TMR2_StopTimer(void);
-[; ;tmr2.h: 198: uint8_t TMR2_ReadTimer(void);
-[; ;tmr2.h: 237: void TMR2_WriteTimer(uint8_t timerVal);
-[; ;tmr2.h: 289: void TMR2_LoadPeriodRegister(uint8_t periodVal);
-[; ;tmr2.h: 324: bool TMR2_HasOverflowOccured(void);
-[; ;pwm1.h: 96: void PWM1_Initialize(void);
-[; ;pwm1.h: 123: void PWM1_LoadDutyValue(uint16_t dutyValue);
-[; ;tmr1.h: 100: void TMR1_Initialize(void);
-[; ;tmr1.h: 129: void TMR1_StartTimer(void);
-[; ;tmr1.h: 161: void TMR1_StopTimer(void);
-[; ;tmr1.h: 196: uint16_t TMR1_ReadTimer(void);
-[; ;tmr1.h: 235: void TMR1_WriteTimer(uint16_t timerVal);
-[; ;tmr1.h: 271: void TMR1_Reload(void);
-[; ;tmr1.h: 310: void TMR1_StartSinglePulseAcquisition(void);
-[; ;tmr1.h: 349: uint8_t TMR1_CheckGateValueStatus(void);
-[; ;tmr1.h: 367: void TMR1_ISR(void);
-[; ;tmr1.h: 385: void TMR1_CallBack(void);
-[; ;tmr1.h: 403: void TMR1_SetInterruptHandler(void *InterruptHandler);
-"421 mcc_generated_files/tmr1.h
-[v _TMR1_InterruptHandler `*F5214 ~T0 @X0 1 e ]
-[; ;tmr1.h: 421: void (*TMR1_InterruptHandler)(void);
-[; ;tmr1.h: 439: void TMR1_DefaultInterruptHandler(void);
-[; ;mcc.h: 78: void SYSTEM_Initialize(void);
-[; ;mcc.h: 91: void OSCILLATOR_Initialize(void);
-"64 mcc_generated_files/adc.c
-[v _ADC_Initialize `(v ~T0 @X0 1 ef ]
+"57 mcc_generated_files/fvr.c
+[v _FVR_Initialize `(v ~T0 @X0 1 ef ]
+"58
+{
+[; ;fvr.c: 57: void FVR_Initialize(void)
+[; ;fvr.c: 58: {
+[e :U _FVR_Initialize ]
+[f ]
+[; ;fvr.c: 60: FVRCON = 0x84;
+"60
+[e = _FVRCON -> -> 132 `i `uc ]
+[; ;fvr.c: 61: }
+"61
+[e :UE 621 ]
+}
+"63
+[v _FVR_IsOutputReady `(uc ~T0 @X0 1 ef ]
+"64
+{
+[; ;fvr.c: 63: bool FVR_IsOutputReady(void)
+[; ;fvr.c: 64: {
+[e :U _FVR_IsOutputReady ]
+[f ]
+[; ;fvr.c: 65: return (FVRCONbits.FVRRDY);
 "65
-{
-[; ;adc.c: 64: void ADC_Initialize(void)
-[; ;adc.c: 65: {
-[e :U _ADC_Initialize ]
-[f ]
-[; ;adc.c: 69: ADCON0 = 0x01;
-"69
-[e = _ADCON0 -> -> 1 `i `uc ]
-[; ;adc.c: 72: ADCON1 = 0xC0;
-"72
-[e = _ADCON1 -> -> 192 `i `uc ]
-[; ;adc.c: 75: ADCON2 = 0x00;
-"75
-[e = _ADCON2 -> -> 0 `i `uc ]
-[; ;adc.c: 78: ADRESL = 0x00;
-"78
-[e = _ADRESL -> -> 0 `i `uc ]
-[; ;adc.c: 81: ADRESH = 0x00;
-"81
-[e = _ADRESH -> -> 0 `i `uc ]
-[; ;adc.c: 83: }
-"83
+[e ) . . _FVRCONbits 0 4 ]
+[e $UE 622  ]
+[; ;fvr.c: 66: }
+"66
 [e :UE 622 ]
-}
-"85
-[v _ADC_StartConversion `(v ~T0 @X0 1 ef1`E5122 ]
-"86
-{
-[; ;adc.c: 85: void ADC_StartConversion(adc_channel_t channel)
-[; ;adc.c: 86: {
-[e :U _ADC_StartConversion ]
-"85
-[v _channel `E5122 ~T0 @X0 1 r1 ]
-"86
-[f ]
-[; ;adc.c: 88: ADCON0bits.CHS = channel;
-"88
-[e = . . _ADCON0bits 0 2 -> _channel `uc ]
-[; ;adc.c: 90: ADCON0bits.ADON = 1;
-"90
-[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
-[; ;adc.c: 92: _delay((unsigned long)((5)*(32000000/4000000.0)));
-"92
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
-[; ;adc.c: 95: ADCON0bits.GO_nDONE = 1;
-"95
-[e = . . _ADCON0bits 0 1 -> -> 1 `i `uc ]
-[; ;adc.c: 97: }
-"97
-[e :UE 623 ]
-}
-"99
-[v _ADC_IsConversionDone `(uc ~T0 @X0 1 ef ]
-"100
-{
-[; ;adc.c: 99: bool ADC_IsConversionDone()
-[; ;adc.c: 100: {
-[e :U _ADC_IsConversionDone ]
-[f ]
-[; ;adc.c: 102: return (!ADCON0bits.GO_nDONE);
-"102
-[e ) -> -> ! != -> . . _ADCON0bits 0 1 `i -> -> -> 0 `i `Vuc `i `i `uc ]
-[e $UE 624  ]
-[; ;adc.c: 103: }
-"103
-[e :UE 624 ]
-}
-"104
-[v _ADC_GetConversionResult `(ui ~T0 @X0 1 ef ]
-"105
-{
-[; ;adc.c: 104: adc_result_t ADC_GetConversionResult(void)
-[; ;adc.c: 105: {
-[e :U _ADC_GetConversionResult ]
-[f ]
-[; ;adc.c: 107: return ((ADRESH << 8) + ADRESL);
-"107
-[e ) -> + << -> _ADRESH `i -> 8 `i -> _ADRESL `i `ui ]
-[e $UE 625  ]
-[; ;adc.c: 108: }
-"108
-[e :UE 625 ]
-}
-"110
-[v _ADC_GetConversion `(ui ~T0 @X0 1 ef1`E5122 ]
-"111
-{
-[; ;adc.c: 110: adc_result_t ADC_GetConversion(adc_channel_t channel)
-[; ;adc.c: 111: {
-[e :U _ADC_GetConversion ]
-"110
-[v _channel `E5122 ~T0 @X0 1 r1 ]
-"111
-[f ]
-[; ;adc.c: 113: ADCON0bits.CHS = channel;
-"113
-[e = . . _ADCON0bits 0 2 -> _channel `uc ]
-[; ;adc.c: 116: ADCON0bits.ADON = 1;
-"116
-[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
-[; ;adc.c: 118: _delay((unsigned long)((5)*(32000000/4000000.0)));
-"118
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 32000000 `l `d .4000000.0 `ul ]
-[; ;adc.c: 121: ADCON0bits.GO_nDONE = 1;
-"121
-[e = . . _ADCON0bits 0 1 -> -> 1 `i `uc ]
-[; ;adc.c: 124: while (ADCON0bits.GO_nDONE)
-"124
-[e $U 627  ]
-[e :U 628 ]
-[; ;adc.c: 125: {
-"125
-{
-"126
-}
-[e :U 627 ]
-"124
-[e $ != -> . . _ADCON0bits 0 1 `i -> -> -> 0 `i `Vuc `i 628  ]
-[e :U 629 ]
-[; ;adc.c: 126: }
-[; ;adc.c: 128: return ((ADRESH << 8) + ADRESL);
-"128
-[e ) -> + << -> _ADRESH `i -> 8 `i -> _ADRESL `i `ui ]
-[e $UE 626  ]
-[; ;adc.c: 130: }
-"130
-[e :UE 626 ]
 }

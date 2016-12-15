@@ -6701,7 +6701,7 @@ void PWM2_Initialize(void)
 CCP2CON = 0x3C;
 
 
-CCPR2L = 0x7F;
+CCPR2L = 0x6F;
 
 
 CCPR2H = 0x7F;

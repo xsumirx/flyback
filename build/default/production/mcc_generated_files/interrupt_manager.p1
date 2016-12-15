@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[v F5210 `(v ~T0 @X0 0 tf ]
+[v F5214 `(v ~T0 @X0 0 tf ]
 [; ;interrupt_manager.h: 110: void interrupt INTERRUPT_InterruptManager(void);
 [; ;htc.h: 26: extern const char __xc8_OPTIM_SPEED;
 [; ;htc.h: 28: extern double __fpnormalize(double);
@@ -4991,6 +4991,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;adc.h: 197: bool ADC_IsConversionDone();
 [; ;adc.h: 230: adc_result_t ADC_GetConversionResult(void);
 [; ;adc.h: 260: adc_result_t ADC_GetConversion(adc_channel_t channel);
+[; ;fvr.h: 92: void FVR_Initialize(void);
+[; ;fvr.h: 126: bool FVR_IsOutputReady(void);
 [; ;dac.h: 92: void DAC_Initialize(void);
 [; ;dac.h: 128: void DAC_SetOutput(uint8_t inputData);
 [; ;pwm3.h: 101: void PWM3_Initialize(void);
@@ -5005,8 +5007,6 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;cmp1.h: 132: bool CMP1_GetOutputStatus(void);
 [; ;pwm2.h: 96: void PWM2_Initialize(void);
 [; ;pwm2.h: 123: void PWM2_LoadDutyValue(uint16_t dutyValue);
-[; ;pwm1.h: 96: void PWM1_Initialize(void);
-[; ;pwm1.h: 123: void PWM1_LoadDutyValue(uint16_t dutyValue);
 [; ;tmr2.h: 102: void TMR2_Initialize(void);
 [; ;tmr2.h: 131: void TMR2_StartTimer(void);
 [; ;tmr2.h: 163: void TMR2_StopTimer(void);
@@ -5014,6 +5014,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tmr2.h: 237: void TMR2_WriteTimer(uint8_t timerVal);
 [; ;tmr2.h: 289: void TMR2_LoadPeriodRegister(uint8_t periodVal);
 [; ;tmr2.h: 324: bool TMR2_HasOverflowOccured(void);
+[; ;pwm1.h: 96: void PWM1_Initialize(void);
+[; ;pwm1.h: 123: void PWM1_LoadDutyValue(uint16_t dutyValue);
 [; ;tmr1.h: 100: void TMR1_Initialize(void);
 [; ;tmr1.h: 129: void TMR1_StartTimer(void);
 [; ;tmr1.h: 161: void TMR1_StopTimer(void);
@@ -5026,8 +5028,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tmr1.h: 385: void TMR1_CallBack(void);
 [; ;tmr1.h: 403: void TMR1_SetInterruptHandler(void *InterruptHandler);
 "421 mcc_generated_files/tmr1.h
-[v _TMR1_InterruptHandler `*F5210 ~T0 @X0 1 e ]
+[v _TMR1_InterruptHandler `*F5214 ~T0 @X0 1 e ]
 [; ;tmr1.h: 421: void (*TMR1_InterruptHandler)(void);
 [; ;tmr1.h: 439: void TMR1_DefaultInterruptHandler(void);
-[; ;mcc.h: 77: void SYSTEM_Initialize(void);
-[; ;mcc.h: 90: void OSCILLATOR_Initialize(void);
+[; ;mcc.h: 78: void SYSTEM_Initialize(void);
+[; ;mcc.h: 91: void OSCILLATOR_Initialize(void);
