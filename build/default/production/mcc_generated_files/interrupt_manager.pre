@@ -6705,26 +6705,25 @@ adc_result_t adcResult2;
 # 94
 typedef enum
 {
-channel_AN4 = 0x4,
 channel_FVRBuffer2 = 0x1C,
 channel_Temp = 0x1D,
 channel_DAC = 0x1E,
 channel_FVRBuffer1 = 0x1F
 } adc_channel_t;
 
-# 136
+# 135
 void ADC_Initialize(void);
 
-# 165
+# 164
 void ADC_StartConversion(adc_channel_t channel);
 
-# 197
+# 196
 bool ADC_IsConversionDone();
 
-# 230
+# 229
 adc_result_t ADC_GetConversionResult(void);
 
-# 260
+# 259
 adc_result_t ADC_GetConversion(adc_channel_t channel);
 
 # 92 "mcc_generated_files/fvr.h"

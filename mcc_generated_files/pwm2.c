@@ -54,7 +54,7 @@
   Section: Macro Declarations
 */
 
-#define PWM2_INITIALIZE_DUTY_VALUE    447
+#define PWM2_INITIALIZE_DUTY_VALUE    409
 
 /**
   Section: PWM Module APIs
@@ -64,11 +64,11 @@ void PWM2_Initialize(void)
 {
     // Set the PWM to the options selected in the MPLAB(c) Code Configurator
 
-    // CCP2M PWM; DC2B 3; 
-    CCP2CON = 0x3C;
+    // CCP2M PWM; DC2B 1; 
+    CCP2CON = 0x1C;
     
-    // CCPR2L 111; 
-    CCPR2L = 0x6F;
+    // CCPR2L 102; 
+    CCPR2L = 0x66;
     
     // CCPR2H 127; 
     CCPR2H = 0x7F;

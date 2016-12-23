@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[v F5214 `(v ~T0 @X0 0 tf ]
+[v F5213 `(v ~T0 @X0 0 tf ]
 "1785 C:\Program Files\Microchip\xc8\v1.38\include\pic16f1709.h
 [v _ADCON0 `Vuc ~T0 @X0 0 e@157 ]
 "1864
@@ -11,8 +11,8 @@ Version 3.2 HI-TECH Software Intermediate Code
 "1766
 [v _ADRESH `Vuc ~T0 @X0 0 e@156 ]
 "86 mcc_generated_files/adc.c
-[c E5122 4 28 29 30 31 .. ]
-[n E5122 . channel_AN4 channel_FVRBuffer2 channel_Temp channel_DAC channel_FVRBuffer1  ]
+[c E5122 28 29 30 31 .. ]
+[n E5122 . channel_FVRBuffer2 channel_Temp channel_DAC channel_FVRBuffer1  ]
 "1791 C:\Program Files\Microchip\xc8\v1.38\include\pic16f1709.h
 [s S95 :1 `uc 1 :1 `uc 1 :5 `uc 1 ]
 [n S95 . ADON GO_nDONE CHS ]
@@ -5009,17 +5009,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;adc.h: 80: } adc_sync_double_result_t;
 [; ;adc.h: 94: typedef enum
 [; ;adc.h: 95: {
-[; ;adc.h: 96: channel_AN4 = 0x4,
-[; ;adc.h: 97: channel_FVRBuffer2 = 0x1C,
-[; ;adc.h: 98: channel_Temp = 0x1D,
-[; ;adc.h: 99: channel_DAC = 0x1E,
-[; ;adc.h: 100: channel_FVRBuffer1 = 0x1F
-[; ;adc.h: 101: } adc_channel_t;
-[; ;adc.h: 136: void ADC_Initialize(void);
-[; ;adc.h: 165: void ADC_StartConversion(adc_channel_t channel);
-[; ;adc.h: 197: bool ADC_IsConversionDone();
-[; ;adc.h: 230: adc_result_t ADC_GetConversionResult(void);
-[; ;adc.h: 260: adc_result_t ADC_GetConversion(adc_channel_t channel);
+[; ;adc.h: 96: channel_FVRBuffer2 = 0x1C,
+[; ;adc.h: 97: channel_Temp = 0x1D,
+[; ;adc.h: 98: channel_DAC = 0x1E,
+[; ;adc.h: 99: channel_FVRBuffer1 = 0x1F
+[; ;adc.h: 100: } adc_channel_t;
+[; ;adc.h: 135: void ADC_Initialize(void);
+[; ;adc.h: 164: void ADC_StartConversion(adc_channel_t channel);
+[; ;adc.h: 196: bool ADC_IsConversionDone();
+[; ;adc.h: 229: adc_result_t ADC_GetConversionResult(void);
+[; ;adc.h: 259: adc_result_t ADC_GetConversion(adc_channel_t channel);
 [; ;pin_manager.h: 73: void PIN_MANAGER_Initialize (void);
 [; ;interrupt_manager.h: 110: void interrupt INTERRUPT_InterruptManager(void);
 [; ;fvr.h: 92: void FVR_Initialize(void);
@@ -5059,7 +5058,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tmr1.h: 385: void TMR1_CallBack(void);
 [; ;tmr1.h: 403: void TMR1_SetInterruptHandler(void *InterruptHandler);
 "421 mcc_generated_files/tmr1.h
-[v _TMR1_InterruptHandler `*F5214 ~T0 @X0 1 e ]
+[v _TMR1_InterruptHandler `*F5213 ~T0 @X0 1 e ]
 [; ;tmr1.h: 421: void (*TMR1_InterruptHandler)(void);
 [; ;tmr1.h: 439: void TMR1_DefaultInterruptHandler(void);
 [; ;mcc.h: 78: void SYSTEM_Initialize(void);

@@ -5017,9 +5017,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tmr2.c: 62: T2CON = 0x00;
 "62
 [e = _T2CON -> -> 0 `i `uc ]
-[; ;tmr2.c: 65: PR2 = 0x9F;
+[; ;tmr2.c: 65: PR2 = 0xFF;
 "65
-[e = _PR2 -> -> 159 `i `uc ]
+[e = _PR2 -> -> 255 `i `uc ]
 [; ;tmr2.c: 68: TMR2 = 0x00;
 "68
 [e = _TMR2 -> -> 0 `i `uc ]

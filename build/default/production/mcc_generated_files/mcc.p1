@@ -1,5 +1,5 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[v F5214 `(v ~T0 @X0 0 tf ]
+[v F5213 `(v ~T0 @X0 0 tf ]
 "73 mcc_generated_files/pin_manager.h
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
 "91 mcc_generated_files/mcc.h
@@ -18,7 +18,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [v _PWM1_Initialize `(v ~T0 @X0 0 ef ]
 "92 mcc_generated_files/cmp1.h
 [v _CMP1_Initialize `(v ~T0 @X0 0 ef ]
-"136 mcc_generated_files/adc.h
+"135 mcc_generated_files/adc.h
 [v _ADC_Initialize `(v ~T0 @X0 0 ef ]
 "101 mcc_generated_files/pwm3.h
 [v _PWM3_Initialize `(v ~T0 @X0 0 ef ]
@@ -5014,17 +5014,16 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;adc.h: 80: } adc_sync_double_result_t;
 [; ;adc.h: 94: typedef enum
 [; ;adc.h: 95: {
-[; ;adc.h: 96: channel_AN4 = 0x4,
-[; ;adc.h: 97: channel_FVRBuffer2 = 0x1C,
-[; ;adc.h: 98: channel_Temp = 0x1D,
-[; ;adc.h: 99: channel_DAC = 0x1E,
-[; ;adc.h: 100: channel_FVRBuffer1 = 0x1F
-[; ;adc.h: 101: } adc_channel_t;
-[; ;adc.h: 136: void ADC_Initialize(void);
-[; ;adc.h: 165: void ADC_StartConversion(adc_channel_t channel);
-[; ;adc.h: 197: bool ADC_IsConversionDone();
-[; ;adc.h: 230: adc_result_t ADC_GetConversionResult(void);
-[; ;adc.h: 260: adc_result_t ADC_GetConversion(adc_channel_t channel);
+[; ;adc.h: 96: channel_FVRBuffer2 = 0x1C,
+[; ;adc.h: 97: channel_Temp = 0x1D,
+[; ;adc.h: 98: channel_DAC = 0x1E,
+[; ;adc.h: 99: channel_FVRBuffer1 = 0x1F
+[; ;adc.h: 100: } adc_channel_t;
+[; ;adc.h: 135: void ADC_Initialize(void);
+[; ;adc.h: 164: void ADC_StartConversion(adc_channel_t channel);
+[; ;adc.h: 196: bool ADC_IsConversionDone();
+[; ;adc.h: 229: adc_result_t ADC_GetConversionResult(void);
+[; ;adc.h: 259: adc_result_t ADC_GetConversion(adc_channel_t channel);
 [; ;fvr.h: 92: void FVR_Initialize(void);
 [; ;fvr.h: 126: bool FVR_IsOutputReady(void);
 [; ;dac.h: 92: void DAC_Initialize(void);
@@ -5062,7 +5061,7 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;tmr1.h: 385: void TMR1_CallBack(void);
 [; ;tmr1.h: 403: void TMR1_SetInterruptHandler(void *InterruptHandler);
 "421 mcc_generated_files/tmr1.h
-[v _TMR1_InterruptHandler `*F5214 ~T0 @X0 1 e ]
+[v _TMR1_InterruptHandler `*F5213 ~T0 @X0 1 e ]
 [; ;tmr1.h: 421: void (*TMR1_InterruptHandler)(void);
 [; ;tmr1.h: 439: void TMR1_DefaultInterruptHandler(void);
 [; ;mcc.h: 78: void SYSTEM_Initialize(void);

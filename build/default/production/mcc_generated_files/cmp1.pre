@@ -6701,7 +6701,7 @@ void CMP1_Initialize(void)
 CM1CON0 = 0x84;
 
 
-CM1CON1 = 0x2B;
+CM1CON1 = 0x03;
 
 TRISA5 = 0;
 ANSELA |= 0x20;

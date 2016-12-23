@@ -4999,9 +4999,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pwm1.c: 68: CCP1CON = 0x1C;
 "68
 [e = _CCP1CON -> -> 28 `i `uc ]
-[; ;pwm1.c: 71: CCPR1L = 0x01;
+[; ;pwm1.c: 71: CCPR1L = 0x02;
 "71
-[e = _CCPR1L -> -> 1 `i `uc ]
+[e = _CCPR1L -> -> 2 `i `uc ]
 [; ;pwm1.c: 74: CCPR1H = 0x00;
 "74
 [e = _CCPR1H -> -> 0 `i `uc ]

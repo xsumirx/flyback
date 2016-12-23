@@ -5000,9 +5000,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;cmp1.c: 62: CM1CON0 = 0x84;
 "62
 [e = _CM1CON0 -> -> 132 `i `uc ]
-[; ;cmp1.c: 65: CM1CON1 = 0x2B;
+[; ;cmp1.c: 65: CM1CON1 = 0x03;
 "65
-[e = _CM1CON1 -> -> 43 `i `uc ]
+[e = _CM1CON1 -> -> 3 `i `uc ]
 [; ;cmp1.c: 67: TRISA5 = 0;
 "67
 [e = _TRISA5 -> -> 0 `i `b ]

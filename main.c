@@ -31,7 +31,7 @@
 
 //#define _XTAL_FREQ 32000000
 
-float DA_LSB,AD_LSB,a0,a1,a2, b1,b2,M1,M2,rk,rk_1,rk_2,Ver,Vref,Vc,Vout,DAC_DISCRETE, ADC_SCALE;
+float DA_LSB,AD_LSB,a0,a1,a2, b1,b2,M1,M2,rk,rk_1,rk_2,rk_3,Ver,Vref,Vc,Vout,DAC_DISCRETE, ADC_SCALE;
 
 
 typedef union _wordContainer
@@ -195,7 +195,7 @@ void main(void) {
     a0 = 0.0649 ; a1 = 0.00765; a2 = -0.0571;
     b1 = 0.77; b2 = 0.22;
     
-    M1 = 0; M2 = 0; rk = 0; rk_1 = 0; rk_2 = 0;
+    M1 = 0; M2 = 0; rk = 0; rk_1 = 0; rk_2 = 0; rk_3 = 0;
     Vref = 2500;
     
     DA_LSB = 256.0/1024.0;
@@ -223,6 +223,9 @@ void main(void) {
     LATC3 = 0;
     ANSELC |= 0x80;
     TRISC |= 0x80;
+    
+    LATA0 = 0;
+    ANSELA = 
     
     
     //ADC RC0
@@ -257,7 +260,7 @@ void main(void) {
     CMP1_Initialize();
     
     ADC_Initialize();
-    ADC_GetConversion(channel_AN4);
+    //ADC_GetConversion(channel_AN4);
     
     USART_Initialize();
     __delay_ms(100);
@@ -279,44 +282,51 @@ void main(void) {
 //            Vref += softStartStep;
 //        }
         
-        adcVal = ADC_GetConversion(channel_AN4) + ADC_GetConversion(channel_AN4) + ADC_GetConversion(channel_AN4) + ADC_GetConversion(channel_AN4);
+        //adcVal = ADC_GetConversion(channel_AN4) + ADC_GetConversion(channel_AN4); //+ ADC_GetConversion(channel_AN4) + ADC_GetConversion(channel_AN4);
 
-        Vout = ((float)adcVal * 4.88)/4; 
+        //Vout = ((float)adcVal * 4.88)/2.0; 
         
-        Ver = Vref - Vout; /* Calculate error term */
+        //Ver = Vref - Vout; /* Calculate error term */
         
         
         //Ver += 0.2;
         
-        rk = Ver + (b1 * rk_1) + (b2 * rk_2);
-        Vc = (a0*rk) + (rk_1 * a1) + (rk_2 * a2); /* Calculate output */
+        //rk = Ver  + (2.625*rk_1) - (2.275*rk_2) + (0.6502*rk_3);
+        //Vc =  (1.195*rk) - (rk_1 * 1.114) - (1.195*rk_2) + (1.114*rk_3); /* Calculate output */
         
-        if(Vc < 0) Vc = 0;
+        //if(Vc < 0) Vc = 0;
         
-        DAC_DISCRETE = Vc*DA_LSB;
+        //DAC_DISCRETE = Vc*DA_LSB;
         
-        unsigned int DAC_ABS = (unsigned int)fabs(DAC_DISCRETE);
-        if(DAC_ABS < 0)
-            DAC_ABS = 0;
-        else if(DAC_ABS > 255)
-            DAC_ABS = 255;
+        //unsigned int DAC_ABS = (unsigned int)fabs(DAC_DISCRETE);
+        //if(DAC_DISCRETE < 0)
+        //    DAC_DISCRETE = 0;
+        //else if(DAC_DISCRETE > 255)
+        //    DAC_DISCRETE = 255;
         
-        DAC_SetOutput(DAC_ABS);
+        //DAC_SetOutput(DAC_DISCRETE);
+        //DAC1CON1 = DAC_DISCRETE;
 
-        rk_2 = rk_1; /* Update variables */
-        rk_1 = rk;
+        //rk_3 = rk_2;
+        //rk_2 = rk_1; /* Update variables */
+        //rk_1 = rk;
+        
+        //USART_WriteString("Vout : ");
+        //USART_WriteValue(Vout/1000.0);
+        
+        //USART_WriteString("      ");
 
-//        USART_WriteString("Ver : ");
-//        USART_WriteValue(Ver);
-//        
-//        USART_WriteString("      ");
-//                
-//        USART_WriteString("Vc : ");
+        //USART_WriteString("Ver : ");
+        //USART_WriteValue(Ver);
+        
+        //USART_WriteString("      ");
+                
+        //USART_WriteString("Vc : ");
         //USART_WriteValue(Vc);
         
         //USART_Write('\n');
         
-        //__delay_ms(10);
+        //__delay_us(33);
         
     }
     return;

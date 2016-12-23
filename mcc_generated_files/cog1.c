@@ -91,8 +91,8 @@ void COG1_Initialize(void)
     // G1DBF 0; 
     COG1DBF = 0x00;
 
-    // G1BLKR 10; 
-    COG1BLKR = 0x0A;
+    // G1BLKR 2; 
+    COG1BLKR = 0x02;
 
     // G1BLKF 0; 
     COG1BLKF = 0x00;

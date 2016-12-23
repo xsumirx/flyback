@@ -58,8 +58,8 @@ void DAC_Initialize(void)
 {
     // DAC1EN enabled; DAC1NSS VSS; DAC1PSS FVR; DAC1OE1 disabled; DAC1OE2 enabled; 
     DAC1CON0 = 0x98;
-    // DAC1R 25; 
-    DAC1CON1 = 0x19;
+    // DAC1R 13; 
+    DAC1CON1 = 0x0D;
 }
 
 void DAC_SetOutput(uint8_t inputData)

@@ -4996,12 +4996,12 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;pwm2.c: 64: {
 [e :U _PWM2_Initialize ]
 [f ]
-[; ;pwm2.c: 68: CCP2CON = 0x3C;
+[; ;pwm2.c: 68: CCP2CON = 0x1C;
 "68
-[e = _CCP2CON -> -> 60 `i `uc ]
-[; ;pwm2.c: 71: CCPR2L = 0x6F;
+[e = _CCP2CON -> -> 28 `i `uc ]
+[; ;pwm2.c: 71: CCPR2L = 0x66;
 "71
-[e = _CCPR2L -> -> 111 `i `uc ]
+[e = _CCPR2L -> -> 102 `i `uc ]
 [; ;pwm2.c: 74: CCPR2H = 0x7F;
 "74
 [e = _CCPR2H -> -> 127 `i `uc ]
